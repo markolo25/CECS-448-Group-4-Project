@@ -5,6 +5,7 @@ Pokemon Go-esque fitness app made with Ionic, as well as incorporating knowledge
 |Date|Description|
 | --- | --- |
 | 10/11/2016 | Ionic Setup and Javascript Familiarit, compile test, hello world! |
-| 10/11/2016 | (Mark) Retrieve data within the ionic framework |
+| 10/11/2016 | (Mark/David) Retrieve data within the ionic framework |
+| 10/11/2016 | (Alex) Start on App layout with junk data |
 | 10/12/2016 | Intial work on user interface
 
