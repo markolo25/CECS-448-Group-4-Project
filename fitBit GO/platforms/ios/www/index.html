@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html ng-app="ionicApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+  </head>
+  <body class="platform-ios platform-cordova platform-webview">
+      <div ng-controller="MainCtrl">
+    <ion-side-menus>
+        
+    <ion-side-menu-content>
+        <ion-header-bar class="bar bar-header bar-dark">
+            <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
+            <button class="button button-icon icon ion-stats-bars"></button>
+            <button class="button button-icon icon ion-ios-wineglass"></button>     
+            
+            <h1 class="title">Fitbidt GO!</h1>
+            
+            <button class="button button-icon icon ion-navicon" menu-toggle="right"></button>
+        </ion-header-bar>
+    </ion-side-menu-content>
+        <ion-content> i </ion-content>
+            <ion-side-menu side="left">
+                <ion-list>
+                    <div class="item item-button-right">
+                        My Profile
+                    <ion-item class="button button-icon icon ion-chevron-right"></ion-item>
+                    </div>
+                        
+                    <div class="item item-button-right">
+                        Find a Gym
+                    <ion-item class="button button-icon icon ion-chevron-right"></ion-item>
+                    </div>
+                        
+                    <div class="item item-button-right">
+                        Join a Challenge
+                    <ion-item class="button button-icon icon ion-chevron-right"></ion-item>
+                    </div>
+                    
+                    <div class="item item-button-right">
+                        Find Friends
+                    <ion-item class="button button-icon icon ion-chevron-right"></ion-item>
+                    </div>
+
+                    <div class="item item-button-right">
+                        Settings
+                    <ion-item class="button button-icon icon ion-chevron-right"></ion-item>
+                    </div>
+    
+                    <div class="item item-button-right">
+                        Help
+                    <ion-item class="button button-icon icon ion-chevron-right"></ion-item>
+                    </div>
+    
+                    <ion-item class="item item-toggle">
+                        Notifications
+                        <label class="toggle toggle-assertive">
+                        <input type="checkbox">
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                        </label>
+                    </ion-item>
+                    
+                    <ion-item class="item item-toggle">
+                        Auto Sync w/ Fitbit
+                        <label class="toggle toggle-assertive">
+                            <input type="checkbox">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                        </ion-item>
+                    </ion-list>
+                </ion-side-menu>  
+        
+            <ion-side-menu side="right">
+                <ion-list>
+                    <div class="item item-button-left">
+                        Run
+                    <ion-item class="button button-icon icon ion-chevron-left"></ion-item>
+                    </div>
+                        
+                    <div class="item item-button-left">
+                        Bike
+                    <ion-item class="button button-icon icon ion-chevron-left"></ion-item>
+                    </div>
+                        
+                    <div class="item item-button-left">
+                        Swim
+                    <ion-item class="button button-icon icon ion-chevron-left"></ion-item>
+                    </div>
+                   
+                </ion-list>
+            </ion-side-menu> 
+        </ion-side-menus>  
+      </div>
+      
+  </body>
+
+</html>
