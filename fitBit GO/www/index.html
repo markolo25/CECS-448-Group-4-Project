@@ -15,7 +15,6 @@
           .catch(err => console.log('Error', err));
       }
     </script>-->
-
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
@@ -40,12 +39,18 @@
         <ion-header-bar class="bar bar-header bar-dark">
             <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
             <button class="button button-icon icon ion-stats-bars"></button>
-            <button class="button button-icon icon ion-ios-wineglass"></button>     
+            <button class="button button-icon icon ion-wineglass"></button>
             
             <h1 class="title">Fitbit GO!</h1>
             
-            <button class="button button-icon icon ion-navicon" menu-toggle="right"></button>
+            <button class="button button-icon icon ion-android-walk" menu-toggle="right"></button>
         </ion-header-bar>
+
+        <ion-content ng-controller="MapController">
+            <div id="map" data-tap-disabled="true"> </div>
+            </ion-content>
+        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAI-5uwpQQwm6dEsdz95CSWjZ7wPm47qAI&sensor=true"></script>
+
     </ion-side-menu-content>
         
             <ion-side-menu side="left">
@@ -121,7 +126,7 @@
                    
                 </ion-list>
             </ion-side-menu> 
-        </ion-side-menus>  
+        </ion-side-menus> 
       </div>
   </body>
 
