@@ -46,6 +46,19 @@
             <button class="button button-icon icon ion-android-walk" menu-toggle="right"></button>
         </ion-header-bar>
 
+        <ion-view view-title="Login" name="login-view">
+  <ion-content class="padding">
+      <div class="list list-inset">
+          <label class="item item-input">
+              <input type="text" placeholder="Username" ng-model="data.username">
+          </label>
+          <label class="item item-input">
+              <input type="password" placeholder="Password" ng-model="data.password">
+          </label>
+      </div>
+      <button class="button button-block button-calm" ng-click="login()">Login</button>
+  </ion-content>
+</ion-view>
         <ion-content ng-controller="MapController">
             <div id="map" data-tap-disabled="true"> </div>
             </ion-content>

@@ -38,6 +38,10 @@ app.controller('MapController', function($scope, $ionicLoading) {
  
 });
 
+app.state('login', {
+      url: '/login',
+      templateUrl: 'templates/login.html'
+  })
 
 
 //.run(function($ionicPlatform) {
