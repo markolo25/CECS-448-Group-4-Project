@@ -36,7 +36,7 @@
     <ion-side-menus>
         
     <ion-side-menu-content>
-        <ion-header-bar class="bar bar-header bar-dark">
+        <ion-header-bar class="bar bar-header bar-royal">
             <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
             <button class="button button-icon icon ion-stats-bars"></button>
             <button class="button button-icon icon ion-wineglass"></button>
@@ -47,18 +47,19 @@
         </ion-header-bar>
 
         <ion-view view-title="Login" name="login-view">
-  <ion-content class="padding">
-      <div class="list list-inset">
-          <label class="item item-input">
-              <input type="text" placeholder="Username" ng-model="data.username">
-          </label>
-          <label class="item item-input">
-              <input type="password" placeholder="Password" ng-model="data.password">
-          </label>
-      </div>
-      <button class="button button-block button-calm" ng-click="login()">Login</button>
-  </ion-content>
-</ion-view>
+          <ion-content class="padding">
+              <div class="list list-inset">
+                  <label class="item item-input">
+                      <input type="text" placeholder="Username" ng-model="data.username">
+                  </label>
+                  <label class="item item-input">
+                      <input type="password" placeholder="Password" ng-model="data.password">
+                  </label>
+              </div>
+              <button class="button button-block button-calm" ng-click="login()">Login</button>
+          </ion-content>
+        </ion-view>
+
         <ion-content ng-controller="MapController">
             <div id="map" data-tap-disabled="true"> </div>
             </ion-content>
