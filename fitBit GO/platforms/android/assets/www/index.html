@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="ionicApp">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title></title>
+    <title> </title>
 
     <link rel="manifest" href="manifest.json">
 
@@ -15,7 +15,6 @@
           .catch(err => console.log('Error', err));
       }
     </script>-->
-
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
@@ -27,19 +26,124 @@
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
-    <script src="cordova.js"></script>
+    <script src="cordova.js"> </script>
 
     <!-- your app's js -->
-    <script src="js/app.js"></script>
+    <script src="js/app.js"> </script>
   </head>
-  <body ng-app="starter" class="platform-android platform-cordova platform-webview">
 
-    <ion-pane>
-      <ion-header-bar class="bar-stable">
-        <h1 class="title">Ionic Blank Starter</h1>
-      </ion-header-bar>
-      <ion-content>
-      </ion-content>
-    </ion-pane>
+  <body class="platform-android platform-cordova platform-webview">
+    <div ng-controller="MainCtrl">
+    <div id = "container">
+        <ion-side-menus>
+        <ion-side-menu-content>
+<!--Header Bar-->        
+            <ion-header-bar class="bar bar-header bar-royal">
+            <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
+            <button class="button button-icon icon ion-stats-bars"></button>
+            <button class="button button-icon icon ion-wineglass"></button>
+            
+            <h1 class="title">Fitbit GO!</h1>
+            
+            <button class="button button-icon icon ion-android-walk" menu-toggle="right"></button>
+        </ion-header-bar>
+<!--Login Screen-->      
+        <div id = "loginScreen">
+            <ion-view view-title="Login" name="login-view">
+            <ion-content class="padding">
+            <div class="list list-inset">
+                <label class="item item-input">
+                <input type="text" placeholder="Username" ng-model="data.username"> </label>
+                <label class="item item-input">
+                <input type="password" placeholder="Password" ng-model="data.password"> </label>
+            </div>
+            
+            <button class="button button-block button-royal" ng-click="login()">Login </button>
+            </ion-content>
+            </ion-view>
+        </div>
+<!-- Map -->
+        <ion-content ng-controller="MapController">
+            <div id="map" data-tap-disabled="true"> </div>
+            </ion-content>
+        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAI-5uwpQQwm6dEsdz95CSWjZ7wPm47qAI&sensor=true"></script>
+        </ion-side-menu-content>
+<!-- Left Side Menu -->
+        <ion-side-menu side="left">
+            <ion-list>
+            <div class="item item-button-right">
+                My Profile
+                <ion-item class="button button-icon icon ion-chevron-right"></ion-item>
+            </div>
+                        
+            <div class="item item-button-right">
+                Find a Gym
+                <ion-item class="button button-icon icon ion-chevron-right"></ion-item>
+            </div>
+                        
+            <div class="item item-button-right">
+                Join a Challenge
+                <ion-item class="button button-icon icon ion-chevron-right"></ion-item>
+            </div>
+                    
+            <div class="item item-button-right">
+                Find Friends
+                <ion-item class="button button-icon icon ion-chevron-right"></ion-item>
+            </div>
+
+            <div class="item item-button-right">
+                Settings
+                <ion-item class="button button-icon icon ion-chevron-right"></ion-item>
+            </div>
+    
+            <div class="item item-button-right">
+                Help
+                <ion-item class="button button-icon icon ion-chevron-right"></ion-item>
+            </div>
+    
+            <ion-item class="item item-toggle">
+                Notifications
+                <label class="toggle toggle-assertive">
+                <input type="checkbox">
+                <div class="track">
+                    <div class="handle"> </div>
+                </div>
+                </label>
+            </ion-item>
+                    
+            <ion-item class="item item-toggle">
+                Auto Sync w/ Fitbit
+                <label class="toggle toggle-assertive">
+                <input type="checkbox">
+                <div class="track">
+                    <div class="handle"> </div>
+                </div>
+                </label>
+            </ion-item>
+            </ion-list>
+        </ion-side-menu>  
+<!-- Right Side Menu  -->       
+            <ion-side-menu side="right">
+                <ion-list>
+                    <div class="item item-button-left">
+                        Run
+                    <ion-item class="button button-icon icon ion-chevron-left"></ion-item>
+                    </div>
+                        
+                    <div class="item item-button-left">
+                        Bike
+                    <ion-item class="button button-icon icon ion-chevron-left"></ion-item>
+                    </div>
+                        
+                    <div class="item item-button-left">
+                        Swim
+                    <ion-item class="button button-icon icon ion-chevron-left"></ion-item>
+                    </div>
+                </ion-list>
+            </ion-side-menu> 
+        </ion-side-menus> 
+        </div>
+        </div>
   </body>
+
 </html>
