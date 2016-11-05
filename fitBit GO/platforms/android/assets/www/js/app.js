@@ -11,6 +11,16 @@ app.controller('MainCtrl', function($scope, $ionicSideMenuDelegate) {
     }
 });
 
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+app.controller('LoginCtrl', function($scope) {
+	$scope.show = true;
+});
+
+=======
+>>>>>>> origin/master
+>>>>>>> Stashed changes
 app.controller('MapController', function($scope, $ionicLoading) {
  
     google.maps.event.addDomListener(window, 'load', function() {
