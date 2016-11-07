@@ -33,165 +33,198 @@
     </script>
 
     <!-- your app's js -->
-    <script src="js/app.js">
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAI-5uwpQQwm6dEsdz95CSWjZ7wPm47qAI&sensor=true"></script>
 
-
-    </script>
+    <script src="js/app.js"></script>
 </head>
 
-<body>
-    <div ng-controller="MainCtrl">
-        <div id="container">
-            <ion-side-menus>
-                <ion-side-menu-content>
-                    <!--Header Bar-->
-                    <ion-header-bar class="bar bar-header bar-royal">
-                        <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
-                        <button class="button button-icon icon ion-stats-bars"></button>
-                        <button class="button button-icon icon ion-wineglass"></button>
-
-                        <h1 class="title">Fitbit GO!</h1>
-
-                        <button class="button button-icon icon ion-android-walk" menu-toggle="right"></button>
-                    </ion-header-bar>
-                    <!--Login Screen-->
-                    <div ng-controller="LoginCtrl">
-                        <div id="loginScreen">
-                            <!-- <ion-view view-title="Login" name="login-view">
-            <ion-content class="padding"> -->
-                            <div class="list list-inset" ng-show="show">
-                                <label class="item item-input">
-                <input type="text" placeholder="Username" ng-model="data.username"> </label>
-                                <label class="item item-input">
-                <input type="password" placeholder="Password" ng-model="data.password"> </label>
-                            </div>
-
-                            <button class="button button-block button-royal" id="myBtn" ng-click="show =!show" ng-show="show"> Login </button>
-                            <!-- The Modal -->
-                            <div id="myModal" class="modal">
-
-                                <!-- Modal content (Popup) -->
-                                <div class="modal-content">
-                                    <span class="close">×</span>
-                                    <p>Logged in!</p>
-                                </div>
-
-                            </div>
-
-                            <script>
-                                // Get the modal
-                                var modal = document.getElementById('myModal');
-
-                                // Get the button that opens the modal
-                                var btn = document.getElementById("myBtn");
-
-                                // Get the <span> element that closes the modal
-                                var span = document.getElementsByClassName("close")[0];
-
-                                // When the user clicks the button, open the modal
-                                btn.onclick = function() {
-                                    modal.style.display = "block";
-                                }
-
-                                // When the user clicks on <span> (x), close the modal
-                                span.onclick = function() {
-                                    modal.style.display = "none";
-                                    document.getElementById('loginScreen').style.zIndex = "-1";
-                                }
-
-                                // When the user clicks anywhere outside of the modal, close it
-                                window.onclick = function(event) {
-                                    if (event.target == modal) {
-                                        modal.style.display = "none";
-                                        document.getElementById('loginScreen').style.zIndex = "-1";
-                                    }
-                                }
-
-                            </script>
-                        </div>
-                    </div>
-                    <!-- Map -->
-                    <ion-content ng-controller="MapController">
-                        <div id="map" data-tap-disabled="true"> </div>
-                    </ion-content>
-                    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAI-5uwpQQwm6dEsdz95CSWjZ7wPm47qAI&sensor=true"></script>
-                </ion-side-menu-content>
-                <!-- Left Side Menu -->
-                <ion-side-menu side="left">
-                    <ion-list>
-                        <div class="item item-button-right">
+<body ng-controller="MapCtrl">
+    <div id="container">
+        <ion-nav-bar class="bar-royal">
+            <!--
+<ion-nav-back-button class="button-clear">
+    <i class="ion-arrow-left-c"></i> Back
+</ion-nav-back-button>
+-->
+            <ion-nav-buttons side="left">
+                <a nav-transition="android" href="#/movie2/1">
+                    <button class="button button-calm">
                             My Profile
-                            <ion-item class="button button-icon icon ion-chevron-right"></ion-item>
-                        </div>
-
-                        <div class="item item-button-right">
-                            Find a Gym
-                            <ion-item class="button button-icon icon ion-chevron-right"></ion-item>
-                        </div>
-
-                        <div class="item item-button-right">
-                            Join a Challenge
-                            <ion-item class="button button-icon icon ion-chevron-right"></ion-item>
-                        </div>
-
-                        <div class="item item-button-right">
-                            Find Friends
-                            <ion-item class="button button-icon icon ion-chevron-right"></ion-item>
-                        </div>
-
-                        <div class="item item-button-right">
+                        </button>
+                </a>
+            </ion-nav-buttons>
+            <ion-nav-buttons side="right">
+                <a nav-transition="android" href="#/movie/1">
+                    <button class="button button-calm">
                             Settings
-                            <ion-item class="button button-icon icon ion-chevron-right"></ion-item>
-                        </div>
+                        </button>
+                </a>
+            </ion-nav-buttons>
+        </ion-nav-bar>
 
-                        <div class="item item-button-right">
-                            Help
-                            <ion-item class="button button-icon icon ion-chevron-right"></ion-item>
-                        </div>
-
-                        <ion-item class="item item-toggle">
-                            Notifications
-                            <label class="toggle toggle-assertive">
-                <input type="checkbox">
-                <div class="track">
-                    <div class="handle"> </div>
+        <div ng-controller="LoginCtrl">
+            <div id="loginScreen">
+                <div class="list list-inset" ng-show="show">
+                    <label class="item item-input">
+                                <input type="text" placeholder="Username" ng-model="data.username"> </label>
+                    <label class="item item-input">
+                                <input type="password" placeholder="Password" ng-model="data.password"> </label>
                 </div>
-                </label>
-                        </ion-item>
+                <button class="button button-block button-royal" id="myBtn" ng-click="show =!show" ng-show="show"> Login </button>
+                <div id="myModal" class="modal">
 
-                        <ion-item class="item item-toggle">
-                            Auto Sync w/ Fitbit
-                            <label class="toggle toggle-assertive">
-                <input type="checkbox">
-                <div class="track">
-                    <div class="handle"> </div>
+                    <div class="modal-content">
+                        <span class="close">×</span>
+                        <p>Logged in!</p>
+                    </div>
+
                 </div>
-                </label>
-                        </ion-item>
-                    </ion-list>
-                </ion-side-menu>
-                <!-- Right Side Menu  -->
-                <ion-side-menu side="right">
-                    <ion-list>
-                        <div class="item item-button-left">
-                            Run
-                            <ion-item class="button button-icon icon ion-chevron-left"></ion-item>
-                        </div>
 
-                        <div class="item item-button-left">
-                            Bike
-                            <ion-item class="button button-icon icon ion-chevron-left"></ion-item>
-                        </div>
+                <script>
+                    var modal = document.getElementById('myModal');
 
-                        <div class="item item-button-left">
-                            Swim
-                            <ion-item class="button button-icon icon ion-chevron-left"></ion-item>
-                        </div>
-                    </ion-list>
-                </ion-side-menu>
-            </ion-side-menus>
+                    var btn = document.getElementById("myBtn");
+
+                    var span = document.getElementsByClassName("close")[0];
+
+                    btn.onclick = function() {
+                        modal.style.display = "block";
+                    }
+
+                    span.onclick = function() {
+                        modal.style.display = "none";
+                        document.getElementById('loginScreen').style.zIndex = "-1";
+                    }
+
+                    window.onclick = function(event) {
+                        if (event.target == modal) {
+                            modal.style.display = "none";
+                            document.getElementById('loginScreen').style.zIndex = "-1";
+                        }
+                    }
+
+                </script>
+            </div>
         </div>
+        <ion-nav-view></ion-nav-view>
+
+        <script id="list.html" type="text/ng-template">
+            <ion-view view-title="FitBit GO!">
+
+                <ion-content>
+                    <div id="map" data-tap-disabled="true"> </div>
+                </ion-content>
+            </ion-view>
+        </script>
+
+        <script id="settings.html" type="text/ng-template">
+            <ion-view view-title="Settings" name="setting-view">
+
+                <ion-content class="padding">
+                    <button class="button icon ion-ios-arrow-back button-assertive" ng-click="goBack()" nav-direction="back"> Go Back</button>
+                    <p>&nbsp;</p>
+                    <p></p>
+                    <div class="list">
+
+                        <a class="item item-icon-left" href="#">
+                            <i class="icon ion-email"></i> Send us an email
+                        </a>
+
+                        <a class="item item-icon-left item-icon-right" href="#">
+                            <i class="icon ion-chatbubble-working"></i> Call assistance
+                            <i class="icon ion-ios-telephone-outline"></i>
+                        </a>
+
+                        <a class="item item-toggle item-icon-left">
+                            <i class="icon ion-ios-gear"></i> Setting
+                            <label class="toggle toggle-royal">
+						       <input type="">
+						       <div class="track">
+						         <div class="handle"></div>
+						       </div>
+						     </label>
+                        </a>
+
+                        <div class="item range">
+                            <i class="icon ion-volume-low"></i>
+                            <input type="range" name="volume">
+                            <i class="icon ion-volume-high"></i>
+                        </div>
+
+
+                        <div class="item range range-positive">
+                            <i class="icon ion-ios-sunny-outline"></i>
+                            <input type="range" name="volume" min="0" max="100" value="33">
+                            <i class="icon ion-ios-sunny"></i>
+                        </div>
+
+
+                        <a class="item item-icon-left" href="#">
+                            <i class="icon ion-ios-gear"></i> Setting
+                        </a>
+
+
+                        <a class="item item-icon-left" href="#">
+                            <i class="icon ion-social-linkedin"></i> Follow us on Linkedin
+                        </a>
+
+                        <a class="item item-icon-left" href="#">
+                            <i class="icon ion-social-facebook"></i> Follow us on Facebook
+                        </a>
+
+                        <a class="item item-icon-left" href="#">
+                            <i class="icon ion-social-twitter"></i> Follow us on Twitter
+                        </a>
+
+                    </div>
+                </ion-content>
+            </ion-view>
+        </script>
+
+        <script id="profile.html" type="text/ng-template">
+            <ion-view view-title="Profile" name="profile-view">
+
+                <ion-content class="padding">
+                    <button class="button icon ion-ios-arrow-back button-assertive" ng-click="goBack()" nav-direction="back"> Go Back</button>
+
+                    <div class="profile-picture">
+                        <img src="img/profileblank.jpeg" class="size-profile">
+                    </div>
+
+                    <div class="list">
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">First Name</span>
+                            <input type="text" placeholder="John">
+                          </label>
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Last Name</span>
+                            <input type="text" placeholder="Suhr">
+                          </label>
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Email</span>
+                            <input type="text" placeholder="john@suhr.com">
+                          </label>
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Weight</span>
+                            <input type="text" placeholder="180 Lbs">
+                          </label>
+                        <label class="item item-input item-stacked-label">
+                            <span class="input-label">Size</span>
+                            <input type="text" placeholder="6 ft">
+                          </label>
+                    </div>
+                    <div class="save-changes">
+                        <a href="index.html">
+                            <button class="button button-block button-balanced">
+                            Save changes
+                        </button>
+                        </a>
+                    </div>
+                </ion-content>
+            </ion-view>
+        </script>
     </div>
+
 </body>
 
 </html>
