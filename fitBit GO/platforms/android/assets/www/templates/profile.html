@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html ng-app="ionicApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title> </title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js">
+
+
+    </script>
+
+    <!-- your app's js -->
+    <script src="js/app.js">
+
+
+    </script>
+</head>
+
+<body>
+    <div ng-controller="MainCtrl">
+        <div id="container">
+            <ion-side-menus>
+                <ion-side-menu-content>
+                    <!--Header Bar-->
+                    <ion-header-bar class="bar bar-header bar-royal">
+                        <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
+                        <button class="button button-icon icon ion-stats-bars"></button>
+                        <button class="button button-icon icon ion-wineglass"></button>
+
+                        <h1 class="title">Fitbit GO!</h1>
+
+                        <button class="button button-icon icon ion-android-walk" menu-toggle="right"></button>
+                    </ion-header-bar>
+
+
+                    <!-- Content -->
+                   <ion-view view-title="Profile" name="profile-view">
+    
+                    <ion-content class="padding">
+                        <div class="profile-picture">
+                            <img src="img/profileblank.jpeg" class="size-profile">
+                        </div>
+
+                        <div class="list">
+                          <label class="item item-input item-stacked-label">
+                            <span class="input-label">First Name</span>
+                            <input type="text" placeholder="John">
+                          </label>
+                          <label class="item item-input item-stacked-label">
+                            <span class="input-label">Last Name</span>
+                            <input type="text" placeholder="Suhr">
+                          </label>
+                          <label class="item item-input item-stacked-label">
+                            <span class="input-label">Email</span>
+                            <input type="text" placeholder="john@suhr.com">
+                          </label>
+                          <label class="item item-input item-stacked-label">
+                            <span class="input-label">Weight</span>
+                            <input type="text" placeholder="180 Lbs">
+                          </label>
+                          <label class="item item-input item-stacked-label">
+                            <span class="input-label">Size</span>
+                            <input type="text" placeholder="6 ft">
+                          </label>
+                          
+                        </div>
+                        <div class="save-changes">
+                        <a href="index.html">
+                        <button class="button button-block button-balanced">
+                            Save changes
+                        </button>
+                        </a>
+                        </div>
+
+
+                    </ion-content>
+                </ion-view>
+
+
+           
+                </ion-side-menu-content>
+                <!-- Left Side Menu -->
+                <ion-side-menu side="left">
+                    <ion-list>
+                    <a nav-clear menu-close href="index.html" class="item">Home</a>
+                    <a nav-clear menu-close href="profile.html" class="item">My Profile</a>
+                    <a nav-clear menu-close href="#/home" class="item">Find a Gym</a>
+                    <a nav-clear menu-close href="#/home" class="item">Join a Challenge</a>
+                    <a nav-clear menu-close href="#/home" class="item">Find Friends</a>
+                    <a nav-clear menu-close href="settings.html" class="item">Settings</a>
+                    <a nav-clear menu-close href="#/home" class="item">Help</a>
+
+                        <ion-item class="item item-toggle">
+                            Notifications
+                            <label class="toggle toggle-assertive">
+                <input type="checkbox">
+                <div class="track">
+                    <div class="handle"> </div>
+                </div>
+                </label>
+                        </ion-item>
+
+                        <ion-item class="item item-toggle">
+                            Auto Sync w/ Fitbit
+                            <label class="toggle toggle-assertive">
+                <input type="checkbox">
+                <div class="track">
+                    <div class="handle"> </div>
+                </div>
+                </label>
+                        </ion-item>
+                    </ion-list>
+                </ion-side-menu>
+                <!-- Right Side Menu  -->
+                <ion-side-menu side="right">
+                    <ion-list>
+                        <div class="item item-button-left">
+                            Run
+                            <ion-item class="button button-icon icon ion-chevron-left"></ion-item>
+                        </div>
+
+                        <div class="item item-button-left">
+                            Bike
+                            <ion-item class="button button-icon icon ion-chevron-left"></ion-item>
+                        </div>
+
+                        <div class="item item-button-left">
+                            Swim
+                            <ion-item class="button button-icon icon ion-chevron-left"></ion-item>
+                        </div>
+                    </ion-list>
+                </ion-side-menu>
+            </ion-side-menus>
+        </div>
+    </div>
+</body>
+
+</html>
