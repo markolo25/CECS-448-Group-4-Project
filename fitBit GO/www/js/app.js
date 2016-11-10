@@ -29,7 +29,8 @@ app.controller('MapCtrl', function ($scope, $ionicLoading) {
     });
 });
 
-app.config(function ($stateProvider, $urlRouterProvider) {
+app.config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+    $ionicConfigProvider.tabs.position('bottom');
 
     $stateProvider
         .state('list', {
@@ -46,6 +47,21 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: '/movie2/:movieid2',
             templateUrl: 'profile.html',
             controller: 'ViewCtrl'
+        })
+        .state('view3', {
+            url: '/movie3/:movieid3',
+            templateUrl: 'heart.html',
+            controller: 'ViewCtrl'
+        })
+        .state('view4', {
+            url: '/movie4/:movieid4',
+            templateUrl: 'calories.html',
+            controller: 'ViewCtrl'
+        })
+        .state('view5', {
+            url: '/movie5/:movieid5',
+            templateUrl: 'steps.html',
+            controller: 'ViewCtrl'
         });
 
     $urlRouterProvider.otherwise("/");
@@ -58,6 +74,15 @@ app.controller('ListCtrl', function ($scope, $state) {
             movieid: 1
         });
         $state.go('view2', {
+            movieid: 1
+        })
+        $state.go('view3', {
+            movieid: 1
+        })
+        $state.go('view4', {
+            movieid: 1
+        })
+        $state.go('view5', {
             movieid: 1
         });
     }

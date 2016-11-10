@@ -1,21 +1,47 @@
+@font-face {
+    font-family: 'fontawesome';
+    src: url('../fonts/fontawesome-webfont.eot');
+    src: url('../fonts/fontawesome-webfont.eot') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff') format('woff'), url('../fonts/fontawesome-webfont.ttf') format('truetype'), url('../fonts/fontawesome-webfont.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.icon-google-wallet:before {
+    font-family: "fontawesome";
+    font-size: 29px;
+    position: relative;
+    top: 10px;
+    content: "\f1d6";
+}
+
+.center {
+    text-align: center;
+}
+
 .scroll {
     height: 50%;
 }
- 
+
 #container {
     width: 100%;
-    height: 800px;
+    height: 665px;
     position: relative;
 }
+
 #loginScreen {
+    top: 200px;
     width: 100%;
-    height: 800px;
+    height: auto;
     position: absolute;
     z-index: 5;
-    opacity: 0.75;
 }
 
-#loginScreen > div {
+#profileOpt {
+    width: 100%;
+    text-align: left;
+}
+
+#loginScreen>div {
     position: relative;
 }
 
@@ -25,4 +51,75 @@
     z-index: -99;
 }
 
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 800px;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0);
+    /* Black w/ opacity */
+}
 
+
+/* Modal Content */
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px;
+    box-shadow: 10px 10px 5px #888888;
+    width: 100%;
+}
+
+
+/* The Close Button */
+
+.close {
+    /*color: #aaaaaa;*/
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.size-profile {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 110px;
+    max-width: 110px;
+    margin-bottom: 10px;
+}
+
+.item-stacked-label {
+    height: 66px;
+}
+
+.save-changes a {
+    text-decoration: none;
+}
+
+.button-balanced {
+    bottom: 7px;
+}
