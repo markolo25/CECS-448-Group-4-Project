@@ -50,7 +50,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
         })
         .state('view3', {
             url: '/movie3/:movieid3',
-            templateUrl: 'heart.html',
+            templateUrl: 'active_min.html',
             controller: 'ViewCtrl'
         })
         .state('view4', {
@@ -68,7 +68,8 @@ app.config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
 });
 
-app.controller('ListCtrl', function ($scope, $state) {
+app.controller('ListCtrl', function ($scope, $state, $timeout) {
+
     $scope.changePage = function () {
         $state.go('view', {
             movieid: 1
