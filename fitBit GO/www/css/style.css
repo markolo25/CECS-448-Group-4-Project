@@ -134,7 +134,7 @@
 .button-energized {
     position: relative;
     top: 560px;
-    left: 160px;
+    left: 50%;
     display: block;
     height: 50px;
     width: 50px;
