@@ -29,15 +29,6 @@ app.controller('MapCtrl', function ($scope, $ionicLoading) {
     });
 });
 
-//app.controller('ToastCtrl', function ($scope, $cordovaToast) {
-//    $scope.showToast = function (message, duration, location) {
-//        $cordovaToast.show(message, duration, location).then(function (success) {
-//            console.log("The toast was shown");
-//        }, function (error) {
-//            console.log("The toast was not shown due to " + error);
-//        });
-//    }
-//});
 
 app.config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
     $ionicConfigProvider.tabs.position('bottom');
