@@ -141,3 +141,14 @@
     border-radius: 50%;
     border: 1px solid red;
 }
+
+.card-block {
+    border-style: solid;
+    border-color: rgb(255, 255, 179);
+    border-width: 5px;
+    padding-top: 10px;
+    padding-right: 10px;
+    position: relative;
+    background-color: rgb(228, 214, 245);
+    top: 20px;
+}

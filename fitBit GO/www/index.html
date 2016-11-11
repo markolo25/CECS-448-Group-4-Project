@@ -122,38 +122,15 @@
 
                     <ion-tab title="Active Min" icon-on="ion-clock" icon-off="ion-clock" href="#/movie3/1">
                         <!-- Tab 1 content -->
-                        <!--Active Time Start -->
-                        <ion-content ng-controller="activeTime">
-                        <div class="card-block">
-                        <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options"
-                            chart-dataset-override="datasetOverride" chart-click="onClick" </canvas>
-                        </div>
-                        </ion-content>
-                        <!--Active Time End -->
                     </ion-tab>
 
                     <ion-tab title="Calories" icon-on="ion-fireball" icon-off="ion-fireball" href="#/movie4/1">
                         <!-- Tab 2 content -->
-                        <!--Active calories Start -->
-                        <ion-content ng-controller="calories">
-                        <div class="card-block">
-                        <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options"
-                            chart-dataset-override="datasetOverride" chart-click="onClick" </canvas>
-                        </div>
-                        </ion-content>
-                        <!--Active calories End -->
                     </ion-tab>
 
                     <ion-tab title="Steps" icon-on="icon-google-wallet" icon-off="icon-google-wallet" href="#/movie5/1">
                         <!-- Tab 3 content -->
-                        <!--Active steps Start -->
-                        <ion-content ng-controller="steps">
-                        <div class="card-block">
-                        <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options"
-                            chart-dataset-override="datasetOverride" chart-click="onClick" </canvas>
-                        </div>
-                        </ion-content>
-                        <!--Active steps End -->
+
                     </ion-tab>
 
                 </ion-tabs>
@@ -164,9 +141,13 @@
         <script id="active_min.html" type="text/ng-template">
             <ion-view view-title="Active Minutes" name="heart-view">
 
-                <ion-content class="padding">
+                <ion-content class="padding" ng-controller="activeTime" style="background-color:rgb(153, 0, 77);">
                     <button class="button icon ion-ios-arrow-back button-assertive" ng-click="goBack()" nav-direction="back"> Go Back</button>
-
+                    <!--Active Time Start -->
+                    <div class="card-block">
+                        <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options" chart-dataset-override="datasetOverride" chart-click="onClick"> </canvas>
+                    </div>
+                    <!--Active Time End -->
                     <p>&nbsp;</p>
                     <p></p>
                 </ion-content>
@@ -176,9 +157,13 @@
         <script id="calories.html" type="text/ng-template">
             <ion-view view-title="Calories" name="heart-view">
 
-                <ion-content class="padding">
+                <ion-content class="padding" ng-controller="calories" style="background-color:rgb(0, 61, 153);">
                     <button class="button icon ion-ios-arrow-back button-assertive" ng-click="goBack()" nav-direction="back"> Go Back</button>
-
+                    <!--Active calories Start -->
+                    <div class="card-block">
+                        <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options" chart-dataset-override="datasetOverride" chart-click="onClick"> </canvas>
+                    </div>
+                    <!--Active calories End -->
                     <p>&nbsp;</p>
                     <p></p>
                 </ion-content>
@@ -188,9 +173,13 @@
         <script id="steps.html" type="text/ng-template">
             <ion-view view-title="Steps" name="heart-view">
 
-                <ion-content class="padding">
+                <ion-content class="padding" ng-controller="steps" style="background-color:rgb(71, 71, 107);">
                     <button class="button icon ion-ios-arrow-back button-assertive" ng-click="goBack()" nav-direction="back"> Go Back</button>
-
+                    <!--Active steps Start -->
+                    <div class="card-block">
+                        <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options" chart-dataset-override="datasetOverride" chart-click="onClick"> </canvas>
+                    </div>
+                    <!--Active steps End -->
                     <p>&nbsp;</p>
                     <p></p>
                 </ion-content>
@@ -198,7 +187,7 @@
         </script>
 
         <script id="settings.html" type="text/ng-template">
-            <ion-view view-title="Settings" name="setting-view">
+            <ion-view view-title="Settings" name="setting-view" style="background-color:rgb(91, 38, 140);">
 
                 <ion-content class="padding">
                     <button class="button icon ion-ios-arrow-back button-assertive" ng-click="goBack()" nav-direction="back"> Go Back</button>
@@ -266,40 +255,40 @@
         </script>
 
         <script id="profile.html" type="text/ng-template">
-            <ion-view view-title="Profile" name="profile-view">
+            <ion-view view-title="Profile" name="profile-view" style="background-color:white">
 
-                <ion-content class="padding">
-                    <button class="button icon ion-ios-arrow-back button-assertive" ng-click="goBack()" nav-direction="back"> Go Back</button>
+                <ion-content class=" padding ">
+                    <button class="button icon ion-ios-arrow-back button-assertive " ng-click="goBack() " nav-direction="back "> Go Back</button>
 
-                    <div class="profile-picture">
-                        <img src="img/profileblank.jpeg" class="size-profile">
+                    <div class="profile-picture ">
+                        <img src="img/profileblank.jpeg " class="size-profile ">
                     </div>
 
-                    <div class="list">
-                        <label class="item item-input item-stacked-label">
-                            <span class="input-label">First Name</span>
-                            <input type="text" placeholder="John">
+                    <div class="list ">
+                        <label class="item item-input item-stacked-label ">
+                            <span class="input-label ">First Name</span>
+                            <input type="text " placeholder="John ">
                           </label>
-                        <label class="item item-input item-stacked-label">
-                            <span class="input-label">Last Name</span>
-                            <input type="text" placeholder="Suhr">
+                        <label class="item item-input item-stacked-label ">
+                            <span class="input-label ">Last Name</span>
+                            <input type="text " placeholder="Suhr ">
                           </label>
-                        <label class="item item-input item-stacked-label">
-                            <span class="input-label">Email</span>
-                            <input type="text" placeholder="john@suhr.com">
+                        <label class="item item-input item-stacked-label ">
+                            <span class="input-label ">Email</span>
+                            <input type="text " placeholder="john@suhr.com ">
                           </label>
-                        <label class="item item-input item-stacked-label">
-                            <span class="input-label">Weight</span>
-                            <input type="text" placeholder="180 Lbs">
+                        <label class="item item-input item-stacked-label ">
+                            <span class="input-label ">Weight</span>
+                            <input type="text " placeholder="180 Lbs ">
                           </label>
-                        <label class="item item-input item-stacked-label">
-                            <span class="input-label">Size</span>
-                            <input type="text" placeholder="6 ft">
+                        <label class="item item-input item-stacked-label ">
+                            <span class="input-label ">Size</span>
+                            <input type="text " placeholder="6 ft ">
                           </label>
                     </div>
-                    <div class="save-changes">
-                        <a href="#/">
-                            <button class="button button-block button-balanced">
+                    <div class="save-changes ">
+                        <a href="#/ ">
+                            <button class="button button-block button-balanced ">
                                 Save changes
                             </button>
                         </a>
