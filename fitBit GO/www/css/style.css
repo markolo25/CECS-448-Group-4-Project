@@ -153,6 +153,6 @@
     top: 20px;
 }
 
-.tabs-icon-top {
-    height: 200px !important;
+.badge {
+    opacity: 0.6;
 }
