@@ -113,22 +113,37 @@
                 <ion-content ng-controller="MapCtrl">
                     <div id="map" data-tap-disabled="true"> </div>
                 </ion-content>
-
+                <!--
+                <div class="card">
+                    <div class="item item-divider" style="text-align: center">
+                        Daily
+                    </div>
+                    <div class="item item-text-wrap">
+                        91 min
+                    </div>
+                    <div class="item item-text-wrap">
+                        2104 cal burned
+                    </div>
+                    <div class="item item-text-wrap">
+                        2336 steps
+                    </div>
+                </div>
+-->
                 <button class="button icon ion-android-walk button-energized"> </button>
 
                 <ion-tabs class="tabs-royal tabs-icon-top">
                     <ion-tab title="Home" icon-on="icon ion-home" icon-off="icon ion-home" href="#/">
                     </ion-tab>
 
-                    <ion-tab title="Active Min" icon-on="ion-clock" icon-off="ion-clock" href="#/movie3/1">
+                    <ion-tab title="Active Min" icon-on="ion-clock" icon-off="ion-clock" badge="91" badge-style="badge-stable" href="#/movie3/1">
                         <!-- Tab 1 content -->
                     </ion-tab>
 
-                    <ion-tab title="Calories" icon-on="ion-fireball" icon-off="ion-fireball" href="#/movie4/1">
+                    <ion-tab title="Calories" icon-on="ion-fireball" icon-off="ion-fireball" badge="2104" badge-style="badge-stable" href="#/movie4/1">
                         <!-- Tab 2 content -->
                     </ion-tab>
 
-                    <ion-tab title="Steps" icon-on="icon-google-wallet" icon-off="icon-google-wallet" href="#/movie5/1">
+                    <ion-tab title="Steps" icon-on="icon-google-wallet" icon-off="icon-google-wallet" badge="2336" badge-style="badge-stable" href="#/movie5/1">
                         <!-- Tab 3 content -->
 
                     </ion-tab>

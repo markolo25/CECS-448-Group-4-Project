@@ -152,3 +152,7 @@
     background-color: rgb(228, 214, 245);
     top: 20px;
 }
+
+.tabs-icon-top {
+    height: 200px !important;
+}
