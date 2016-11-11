@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-var app = angular.module('ionicApp', ['ionic', 'ui.router']);
+var app = angular.module('ionicApp', ['ionic', 'ui.router', 'ngCordova']);
 
 app.controller('MapCtrl', function ($scope, $ionicLoading) {
 
@@ -29,6 +29,12 @@ app.controller('MapCtrl', function ($scope, $ionicLoading) {
     });
 });
 
+app.controller("ToastController", function ($scope, $cordovaToast) {
+    $scope.showToast = function (message, duration, location) {
+        $cordovaToast.show(message, duration, location);
+    }
+});
+
 app.config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
     $ionicConfigProvider.tabs.position('bottom');
 
@@ -50,7 +56,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
         })
         .state('view3', {
             url: '/movie3/:movieid3',
-            templateUrl: 'heart.html',
+            templateUrl: 'active_min.html',
             controller: 'ViewCtrl'
         })
         .state('view4', {
@@ -68,7 +74,8 @@ app.config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
 });
 
-app.controller('ListCtrl', function ($scope, $state) {
+app.controller('ListCtrl', function ($scope, $state, $timeout) {
+
     $scope.changePage = function () {
         $state.go('view', {
             movieid: 1

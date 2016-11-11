@@ -123,3 +123,14 @@
 .button-balanced {
     bottom: 7px;
 }
+
+.button-energized {
+    position: relative;
+    top: 560px;
+    left: 160px;
+    display: block;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 1px solid red;
+}

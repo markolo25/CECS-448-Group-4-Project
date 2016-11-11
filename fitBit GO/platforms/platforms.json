@@ -1,4 +1,4 @@
 {
     "android": "6.0.0",
-    "ios": "https://github.com/apache/cordova-ios.git"
+    "ios": "3.8.0"
 }
