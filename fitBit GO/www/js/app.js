@@ -103,7 +103,7 @@ app.controller('LoginCtrl', function ($scope) {
 
 app.controller('activeTime', function($scope) {
     $scope.labels = ["11/6/2016", "11/7/2016", "11/8/2016", "11/9/2016", "11/10/2016", "11/11/2016", "11/12/2016","11/13/2016"];
-    $scope.series = [];
+    $scope.series = ["Time (Minutes)"];
     $scope.data = [
         [65, 91, 55, 70, 91, 100, 83],
     ];
@@ -111,7 +111,7 @@ app.controller('activeTime', function($scope) {
 
 app.controller('calories', function($scope) {
     $scope.labels = ["11/6/2016", "11/7/2016", "11/8/2016", "11/9/2016", "11/10/2016", "11/11/2016", "11/12/2016","11/13/2016"];
-    $scope.series = [];
+    $scope.series = ["Calories Burned"];
     $scope.data = [
         [1748, 1930, 1767, 1752, 2104, 1840, 1839],
     ];
@@ -119,7 +119,7 @@ app.controller('calories', function($scope) {
 
 app.controller('steps', function($scope) {
     $scope.labels = ["11/6/2016", "11/7/2016", "11/8/2016", "11/9/2016", "11/10/2016", "11/11/2016", "11/12/2016","11/13/2016"];
-    $scope.series = [];
+    $scope.series = ["Steps Taken"];
     $scope.data = [
         [786, 1040, 1532, 1457, 2366, 47, 2104],
     ];
