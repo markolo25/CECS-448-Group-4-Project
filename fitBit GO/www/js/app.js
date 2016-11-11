@@ -5,19 +5,20 @@
 // the 2nd parameter is an array of 'requires'
 var app = angular.module('ionicApp', ['ionic', 'ui.router', 'ngCordova', 'chart.js']);
 
-app.controller('MapCtrl', function ($scope, $ionicLoading) {
+app.controller('MapCtrl', function($scope, $ionicLoading) {
 
-    google.maps.event.addDomListener(window, 'load', function () {
+    google.maps.event.addDomListener(window, 'load', function() {
         var myLatlng = new google.maps.LatLng(33.7838235, -118.1140904);
 
         var mapOptions = {
             center: myLatlng,
             zoom: 14,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            disableDefaultUI: true
         };
 
         var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-        navigator.geolocation.getCurrentPosition(function (pos) {
+        navigator.geolocation.getCurrentPosition(function(pos) {
             map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
             var myLocation = new google.maps.Marker({
                 position: new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude),
@@ -30,7 +31,7 @@ app.controller('MapCtrl', function ($scope, $ionicLoading) {
 });
 
 
-app.config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+app.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
     $ionicConfigProvider.tabs.position('bottom');
 
     $stateProvider
@@ -69,9 +70,9 @@ app.config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
 });
 
-app.controller('ListCtrl', function ($scope, $state, $timeout) {
+app.controller('ListCtrl', function($scope, $state, $timeout) {
 
-    $scope.changePage = function () {
+    $scope.changePage = function() {
         $state.go('view', {
             movieid: 1
         });
@@ -90,18 +91,18 @@ app.controller('ListCtrl', function ($scope, $state, $timeout) {
     }
 });
 
-app.controller('ViewCtrl', function ($scope, $stateParams, $ionicHistory) {
+app.controller('ViewCtrl', function($scope, $stateParams, $ionicHistory) {
     console.log($stateParams.movieid);
-    $scope.goBack = function () {
+    $scope.goBack = function() {
         $ionicHistory.goBack();
     }
 });
 
-app.controller('LoginCtrl', function ($scope) {
+app.controller('LoginCtrl', function($scope) {
     $scope.show = true;
 });
 
-app.controller('activeTime', function ($scope) {
+app.controller('activeTime', function($scope) {
     $scope.labels = ["11/6/2016", "11/7/2016", "11/8/2016", "11/9/2016", "11/10/2016", "11/11/2016", "11/12/2016", "11/13/2016"];
     $scope.series = ["Time (Minutes)"];
     $scope.data = [
@@ -109,7 +110,7 @@ app.controller('activeTime', function ($scope) {
     ];
 })
 
-app.controller('calories', function ($scope) {
+app.controller('calories', function($scope) {
     $scope.labels = ["11/6/2016", "11/7/2016", "11/8/2016", "11/9/2016", "11/10/2016", "11/11/2016", "11/12/2016", "11/13/2016"];
     $scope.series = ["Calories Burned"];
     $scope.data = [
@@ -117,7 +118,7 @@ app.controller('calories', function ($scope) {
     ];
 })
 
-app.controller('steps', function ($scope) {
+app.controller('steps', function($scope) {
     $scope.labels = ["11/6/2016", "11/7/2016", "11/8/2016", "11/9/2016", "11/10/2016", "11/11/2016", "11/12/2016", "11/13/2016"];
     $scope.series = ["Steps Taken"];
     $scope.data = [
