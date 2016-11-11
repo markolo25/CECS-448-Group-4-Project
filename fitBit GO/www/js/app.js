@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-var app = angular.module('ionicApp', ['ionic', 'ui.router', 'ngCordova']);
+var app = angular.module('ionicApp', ['ionic', 'ui.router', 'ngCordova', 'chart.js']);
 
 app.controller('MapCtrl', function ($scope, $ionicLoading) {
 
@@ -108,4 +108,28 @@ app.controller('ViewCtrl', function ($scope, $stateParams, $ionicHistory) {
 
 app.controller('LoginCtrl', function ($scope) {
     $scope.show = true;
+});
+
+app.controller('activeTime', function($scope) {
+    $scope.labels = ["11/6/2016", "11/7/2016", "11/8/2016", "11/9/2016", "11/10/2016", "11/11/2016", "11/12/2016","11/13/2016"];
+    $scope.series = [];
+    $scope.data = [
+        [65, 91, 55, 70, 91, 100, 83],
+    ];
+})
+
+app.controller('calories', function($scope) {
+    $scope.labels = ["11/6/2016", "11/7/2016", "11/8/2016", "11/9/2016", "11/10/2016", "11/11/2016", "11/12/2016","11/13/2016"];
+    $scope.series = [];
+    $scope.data = [
+        [1748, 1930, 1767, 1752, 2104, 1840, 1839],
+    ];
+})
+
+app.controller('steps', function($scope) {
+    $scope.labels = ["11/6/2016", "11/7/2016", "11/8/2016", "11/9/2016", "11/10/2016", "11/11/2016", "11/12/2016","11/13/2016"];
+    $scope.series = [];
+    $scope.data = [
+        [786, 1040, 1532, 1457, 2366, 47, 2104],
+    ];
 });
