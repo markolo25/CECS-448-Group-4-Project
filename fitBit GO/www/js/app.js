@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-var app = angular.module('ionicApp', ['ionic', 'ui.router', 'ngCordova']);
+var app = angular.module('ionicApp', ['ionic', 'ui.router', 'ngCordova', 'chart.js']);
 
 app.controller('MapCtrl', function ($scope, $ionicLoading) {
 
@@ -12,8 +12,9 @@ app.controller('MapCtrl', function ($scope, $ionicLoading) {
 
         var mapOptions = {
             center: myLatlng,
-            zoom: 14,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
+            zoom: 15,
+            disableDefaultUI: true,
+            mapTypeId: google.maps.MapTypeId.TERRAIN
         };
 
         var map = new google.maps.Map(document.getElementById("map"), mapOptions);
@@ -27,6 +28,15 @@ app.controller('MapCtrl', function ($scope, $ionicLoading) {
         });
         $scope.map = map;
     });
+});
+
+app.controller('graphCtrl', function($scope) {
+    $scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
+    $scope.series = ['Series A', 'Series B'];
+    $scope.data = [
+        [65, 59, 80, 81, 56, 55, 40],
+        [28, 48, 40, 19, 86, 27, 90]
+    ];
 });
 
 //app.controller('ToastCtrl', function ($scope, $cordovaToast) {
